@@ -1,14 +1,14 @@
 def binary_search(list_to_search, key):
     left = 0
     right = len(list_to_search)-1
-    while left < right:
-        mid = left + (right - left) // 2
+    while left <= right:
+        mid = (left + right) // 2
         if list_to_search[mid] == key:
             return mid
-        elif list_to_search[mid] > key:
-            right = mid
+        elif list_to_search[mid] < key:
+            left = mid + 1
         else:
-            left = mid
+            right = mid - 1
     return "Hmmm... Looks like {} is not in the list".format(key)
 
 
